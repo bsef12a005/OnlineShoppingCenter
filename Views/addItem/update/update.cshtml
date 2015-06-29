@@ -1,0 +1,14 @@
+﻿@model pro.Models.product
+@{
+    ViewBag.Title = "update";
+}
+
+<h2>update</h2>
+<form action="/updateDelete/updateConfirm/@Model.Id" method="post">
+        Name<input type="text" value="@Model.pName" name="n">
+         Category<input type="text" value="@Model.category" name="c">
+         price<input type="text" value="@Model.price" name="p">
+         desciption<input type="text" value="@Model.description" name="d">
+         Image<input type="text" value="@Model.image" name="i">
+        <input type="submit" value="Update"  >
+    </form>

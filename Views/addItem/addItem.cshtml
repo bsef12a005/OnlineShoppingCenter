@@ -1,0 +1,58 @@
+﻿@model pro.Models.product
+@{
+    ViewBag.Title = "addItem";
+}
+
+<h2>addItem</h2>
+@using (Html.BeginForm("addItem","addItem")){
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend> Prosuct Name</Legend>
+        <div class="editor-label">
+            @Html.LabelFor(model=>model.pName)</div>
+         <div class="editor-field">
+             @Html.EditorFor(model=>model.pName)
+              @Html.ValidationMessageFor(model=>model.pName)</div>
+
+
+        <legend> category</Legend>
+        <div class="editor-label">
+            @Html.LabelFor(model=>model.category)</div>
+         <div class="editor-field">
+             @Html.EditorFor(model=>model.category)
+              @Html.ValidationMessageFor(model=>model.category)</div>
+         <legend> price</Legend>
+        <div class="editor-label">
+            @Html.LabelFor(model=>model.price)</div>
+         <div class="editor-field">
+             @Html.EditorFor(model=>model.price)
+              @Html.ValidationMessageFor(model=>model.price)</div>
+        <legend> description</Legend>
+        <div class="editor-label">
+            @Html.LabelFor(model=>model.description)</div>
+         <div class="editor-field">
+             @Html.EditorFor(model=>model.description)
+              @Html.ValidationMessageFor(model=>model.description)</div>
+        <legend> image</Legend>
+        <div class="editor-label">
+            @Html.LabelFor(model=>model.image)</div>
+         <div class="editor-field">
+             @Html.EditorFor(model=>model.image)
+              @Html.ValidationMessageFor(model=>model.image)</div>
+        <p>
+            <input type="submit" value="Add Item" />
+          
+            <input type="button" value="Cancel" />
+            </p>
+        @if(Session["name"]=="name")
+            {
+                 {
+                       <p id="aa" style="color:red"> This item already exists</p>
+                       <br/>
+                       <br/>
+                  }
+            }
+        @Session["name"]=null
+        
+        </fieldset>
+}

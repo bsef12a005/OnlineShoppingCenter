@@ -1,0 +1,50 @@
+﻿<h1>Shopping Cart</h1>
+&nbsp;<a href="{#cart.urls.continueShopping}" class="continue-shopping">Continue Shopping</a>
+  <a href="{#cart.urls.checkout}" class="checkout-button">Checkout</a>
+  <table cellspacing="0" class="shopping-cart">
+    <thead>
+      <tr class="headings">
+        <th class="link">&nbsp;</td>
+            Serial Number<th class="product">Item</td>
+        <th class="price">Price</td>
+        <th class="quantity">Quantity</td>
+        <th class="price">Total</td>
+      </tr>
+    </thead>
+    <tbody>
+    {loop items="#cart.products" value="product"}
+      <tr> 
+        <td class="price">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td class="quantity">
+            item1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+        <td class="price">1000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3</td>
+      </tr>
+    {/loop} 
+    {if #cart.coupons}
+      <tr>
+        <td class="quantity-span" colspan="4">Subtotal</td>
+        <td class="price">10000Rs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+      </tr>
+      {loop items="#cart.coupons" value="coupon"}
+        <tr>
+          <td class="quantity-span" colspan="4">Amount</td>
+          <td class="price">20000</td>
+        </tr>
+      {/loop}
+    {/if}
+
+      <tr class="totals">
+        <td colspan="2"><input type="submit" name="submit" value="Update cart" /></td>
+        <td class="quantity-span" colspan="2">Total&nbsp;&nbsp;&nbsp; </td>
+        <td class="price">10000</td>
+      </tr> 
+    </tbody>
+  </table>
+&nbsp;<div class="coupon">
+    &nbsp;<input type="submit" value="Apply" />
+  </div>
+&nbsp;<div style="clear: both;"></div>
+<a href="{#cart.urls.continueShopping}" class="continue-shopping">Continue Shopping</a>
+<a href="{#cart.urls.checkout}" class="checkout-button">Checkout</a>

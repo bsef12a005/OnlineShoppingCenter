@@ -1,0 +1,41 @@
+﻿@model List<pro.Models.product>
+
+@{
+    ViewBag.Title = "updateDelete";
+}
+
+
+
+    <div class="bs-example">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach(var s in Model )
+    {
+         <tr>
+        <td> @s.Id</td>
+        <td> @s.pName</td>
+              <td>@s.category</td>
+         <td> @s.price</td>
+        <td> @s.description</td>
+         <td>
+             <a href="/updateDelete/update/@s.Id" >update</a>
+       </td>
+             <td>
+           <a href="/updateDelete/delete/@s.Id" >delete</a>
+       </td>
+       
+    </tr>
+        
+    }
+            </tbody>
+    </table>
+        </div>

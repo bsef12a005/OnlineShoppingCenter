@@ -1,0 +1,49 @@
+﻿@model List<pro.Models.product>
+<!DOCTYPE html>
+<html lang="en">
+<body>
+                @foreach(var s in Model)
+                {
+                    if(s.category=="2")
+                    {
+                    <div class="row">
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img class="auto-style8" src="/images/@s.image" alt="image"/>
+                            <div class="caption">
+                                <h4 class="pull-right">Price:@s.price</h4>
+                                <h4>Name:@s.pName</h4>
+                                <p>Description: @s.description</p>
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ratings">
+                               
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                   </div>
+                    }
+                }
+
+                   
+
+                   
+
+                   
+
+    
+    
+   
+
+</body>
+
+</html>
+

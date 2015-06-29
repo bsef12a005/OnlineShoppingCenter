@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "search1";
+}
+
+<h2>search1</h2>
+<html>
+    @Scripts.Render("~/bundles/jquery");
+   <script>
+
+       $(document).ready(function () {
+           $('#b1').click(function () {
+
+               var userName = $('#UserName').val();
+               $.getJSON("/search/searchById?pName=" + userName, function (data) {
+
+                   $("#t1 td").remove();
+
+                   $.each(data, function (i, item) {
+                       //    var row = table.insertRow(6);
+                       //    var cell1 = row.insertCell(0);
+                       //    cell1.innerHtml = "hi";
+                       $("#t1").append('<tr> <td >' + item.Roll + '</td>' + '<td >' + item.Att + '</td>' + '<td >' + item.Mid + '</td>' + '<td >' + item.Sessional + '</td>' + '<td >' + item.Final + '</td>' + '</tr>');
+                       //alert('Id = ' + item.Id + " Name = " + item.Name);
+                   });
+               });
+           });
+       });
+</script>
+    <body >
+        <div class="content">
+      <div class="container">
+        <div class="page-header">
+            <center>
+          <h1 style="background-color:wheat">Search For Your Child Status By Giving Roll No In Search Box</h1>
+                </center>
+        </div>
+        <div class="row">
+          <div class="span6 offset3">
+            <div class="widget-body">
+              <div class="center-align">
+                  <center>
+                      
+                     @* <form action="~/show_result/show_result">
+                          <h3>
+                   <label for="">Search by product name</label>
+                      <input type="text" name="roll" required="required" placeholder="Enter Roll No" />
+                        <button id="btn" type="submit">Search</button>
+                              </h3> 
+                          </form>
+                                   
+                              </center>*@
+                      
+                      <br />
+                      <br />
+                      
+                 <table class="table table-hover"  style=" border:double; border-color:black">
+            <tr>
+                
+                <td > Name</td>
+                <td>Category</td>
+                <td>price</td>
+                <td>description</td>
+                <td>image</td>
+                
+                
+
+            </tr>
+
+
+          
+
+        </table>
+
+                   
+                      
+             
+                 <table class="table table-hover" id="t1" style=" border:double; border-color:black">
+            <tr>
+                
+                
+                
+                
+
+            </tr>
+
+
+          
+
+        </table>
+                              
+              </div>
+                <br ><br ><br ><br > <br >  <br >  <br >  <br >  <br >  <br >  <br >  <br >  <br >  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+     
+    </body>
+</html>

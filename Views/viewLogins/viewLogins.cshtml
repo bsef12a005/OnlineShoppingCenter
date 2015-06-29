@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "viewLogins";
+}
+
+<h2>viewLogins</h2>
+
+@model List<pro.Models.admin>
+
+
+
+
+    <div class="bs-example">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>City</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach(var s in Model )
+    {
+         <tr>
+        <td> @s.Id</td>
+        <td> @s.email</td>
+              <td>@s.password</td>
+         <td> @s.city</td>
+        <td> @s.phone</td>
+        
+       
+    </tr>
+        
+    }
+            </tbody>
+    </table>
+        </div>
